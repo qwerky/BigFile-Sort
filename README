@@ -1,0 +1,8 @@
+External file sort demonstration in Java. Designed to sort files much larger than memory available. There's a Creator class to generate large test files.
+
+The strategy is to read a large external file and break it into small chunks that can be sorted in memory. These sorted chunks are written to disk and once the main file has been fully broken into chunks, the chunk files are merged together repeatedly until only one file remains.
+
+Tests with an Intel i5 laptop and a slow disk on a 1.1Gb file containing 100,000,000 ints;
+ - chunk size 1,000,000 9m
+ - chunk size 10,000,000 5m
+ - chunk size 50,000,000 2.5m
